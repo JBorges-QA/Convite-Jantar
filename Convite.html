@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Jantar de Noivado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset otimizado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #9e596f;
+            --color-secondary: #c97b95;
+            --color-accent: #e8b4c8;
+            --color-light: #f8c8dc;
+            --color-text: #7a5a68;
+            --color-bg: #fffafb;
+            --color-white: #ffffff;
+            --color-success: #4CAF50;
+            --color-whatsapp: #25D366;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header e introdução - Otimizado */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 250, 251, 0.95) 0%, rgba(255, 245, 250, 0.92) 100%);
+        }
+
+        .invite-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 0.3s;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.2;
+        }
+
+        .event-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--color-secondary);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 0.6s;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .date-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: clamp(20px, 4vw, 35px) clamp(30px, 6vw, 60px);
+            border-radius: 25px;
+            margin: 30px 0;
+            border: 2px solid rgba(232, 180, 200, 0.3);
+            box-shadow: 0 15px 35px rgba(158, 89, 111, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 0.9s;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .date-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            position: relative;
+            line-height: 1;
+        }
+
+        .date-time small {
+            font-size: clamp(1rem, 3vw, 2rem);
+            font-weight: 500;
+            color: var(--color-secondary);
+            margin-left: 10px;
+        }
+
+        .date-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.3rem);
+            color: #8a5a6f;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 1.2s;
+            color: var(--color-text);
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--color-accent);
+            border-right: 4px solid var(--color-accent);
+        }
+
+        /* Seção de detalhes do evento */
+        .event-details {
+            padding: clamp(40px, 8vw, 100px) 0;
+            background-color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: clamp(25px, 6vw, 60px);
+            position: relative;
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.3s;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            border-radius: 2px;
+        }
+
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(15px, 4vw, 40px);
+            margin-bottom: clamp(25px, 6vw, 60px);
+        }
+
+        .detail-card {
+            background-color: var(--color-white);
+            padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 30px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(158, 89, 111, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(232, 180, 200, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(158, 89, 111, 0.12);
+        }
+
+        .detail-icon {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--color-secondary);
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(248, 200, 220, 0.1);
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+        }
+
+        .detail-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .detail-content {
+            color: var(--color-text);
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 20px;
+        }
+
+        /* Botões */
+        .floral-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(201, 123, 149, 0.3);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floral-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201, 123, 149, 0.4);
+        }
+
+        .floral-button.secondary {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-light));
+            color: var(--color-primary);
+        }
+
+        /* FORMULÁRIO DE CONFIRMAÇÃO */
+        .rsvp-section {
+            padding: clamp(40px, 8vw, 100px) 0;
+            background-color: var(--color-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--color-white);
+            padding: clamp(25px, 5vw, 50px);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(158, 89, 111, 0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(232, 180, 200, 0.3);
+            position: relative;
+        }
+
+        .rsvp-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-light), var(--color-accent), var(--color-secondary));
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(232, 180, 200, 0.5);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: rgba(255, 250, 251, 0.8);
+            color: var(--color-text);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(201, 123, 149, 0.1);
+            background-color: var(--color-white);
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c97b95' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+            padding-right: 40px;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* NOVOS ESTILOS PARA MENU E CÁLCULO */
+        .menu-options-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .menu-options-group .form-group {
+            margin-bottom: 0;
+        }
+
+        .total-display {
+            background: linear-gradient(135deg, rgba(248, 200, 220, 0.1), rgba(232, 180, 200, 0.05));
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid rgba(232, 180, 200, 0.3);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .total-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .menu-details {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(201, 123, 149, 0.1);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-left: 5px;
+            color: var(--color-primary);
+        }
+
+        /* Controles de bebida */
+        .drink-toggle {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .drink-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid rgba(232, 180, 200, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .drink-option:hover {
+            border-color: var(--color-accent);
+        }
+
+        .drink-option.selected {
+            background: linear-gradient(135deg, rgba(201, 123, 149, 0.1), rgba(232, 180, 200, 0.05));
+            border-color: var(--color-secondary);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .drink-option input {
+            display: none;
+        }
+
+        /* Galeria de cardápios */
+        .menu-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-image:hover {
+            transform: scale(1.02);
+        }
+
+        .menu-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* ÁREA DE MENU INDIVIDUAL POR PESSOA */
+        .individual-menus-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .individual-menu-section {
+            background: rgba(248, 200, 220, 0.05);
+            border: 1px solid rgba(232, 180, 200, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .individual-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .individual-menu-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1rem;
+        }
+
+        .individual-menu-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .individual-menu-select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgba(232, 180, 200, 0.5);
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            background-color: white;
+        }
+
+        .menu-toggle-link {
+            background: none;
+            border: none;
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: underline;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .menu-toggle-link:hover {
+            color: var(--color-primary);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(201, 123, 149, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201, 123, 149, 0.4);
+        }
+
+        /* MENSAGEM DE CONFIRMAÇÃO */
+        .confirmation-message {
+            display: none;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(248, 200, 220, 0.15), rgba(232, 180, 200, 0.1));
+            border-radius: 20px;
+            margin-top: 30px;
+            border-left: 5px solid var(--color-secondary);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .confirmation-message.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .confirmation-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .confirmation-icon {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--color-secondary);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .confirmation-text h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+        }
+
+        .confirmation-text p {
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .confirmation-details {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 1px solid rgba(232, 180, 200, 0.3);
+            width: 100%;
+        }
+
+        .confirmation-details p {
+            margin: 8px 0;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .confirmation-details strong {
+            color: var(--color-primary);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: #fffaf5;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-text {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 15px;
+            color: #ffeef2;
+        }
+
+        .heart {
+            color: var(--color-light);
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        /* POPUP para Cardápios Ampliados */
+        .image-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .image-popup-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .image-popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-popup-img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-popup-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .image-popup-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .image-popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* POPUP para Cardápios */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .popup-content {
+            background: var(--color-white);
+            width: 100%;
+            max-width: 800px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(158, 89, 111, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(232, 180, 200, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            padding: 25px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .popup-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: white;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .popup-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .popup-icon {
+            font-size: 3.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            animation: heartbeat 2s infinite;
+        }
+
+        .popup-message {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .popup-message h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .popup-button {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(201, 123, 149, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201, 123, 149, 0.4);
+        }
+
+        /* MAPA ESTILIZADO */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .directions-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-light));
+            color: var(--color-primary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(232, 180, 200, 0.3);
+        }
+
+        .directions-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 180, 200, 0.4);
+            background: linear-gradient(135deg, var(--color-light), var(--color-accent));
+        }
+
+        .address-info {
+            background: rgba(248, 200, 220, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid rgba(232, 180, 200, 0.3);
+        }
+
+        .address-info p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Animações otimizadas */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+            margin-top: 30px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* LOADING */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .loading-spinner {
+            border: 3px solid rgba(232, 180, 200, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid var(--color-secondary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsividade Mobile First */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-section {
+                padding: 30px 15px;
+                min-height: 90vh;
+            }
+            
+            .date-container {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .details-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .rsvp-form {
+                padding: 20px 15px;
+                margin: 0 10px;
+            }
+            
+            .menu-options-group {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .popup-body {
+                padding: 25px 20px;
+            }
+            
+            .popup-content {
+                max-width: 95%;
+            }
+            
+            .confirmation-message {
+                padding: 20px 15px;
+                margin: 20px 10px 0;
+            }
+            
+            .individual-menu-controls {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .image-popup-img {
+                max-height: 60vh;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text {
+                padding: 15px;
+                margin-top: 20px;
+            }
+            
+            .detail-card {
+                padding: 20px 15px;
+            }
+            
+            .floral-button,
+            .submit-btn,
+            .popup-button {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+            }
+            
+            .confirmation-icon {
+                font-size: 2.5rem;
+            }
+            
+            .confirmation-details {
+                padding: 15px;
+            }
+            
+            .footer {
+                padding: 40px 0;
+            }
+            
+            .menu-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .detail-card:hover {
+                transform: none;
+            }
+            
+            .floral-button:hover,
+            .submit-btn:hover,
+            .popup-button:hover {
+                transform: none;
+            }
+            
+            .detail-card:active {
+                transform: translateY(-5px);
+            }
+            
+            .floral-button:active,
+            .submit-btn:active,
+            .popup-button:active {
+                transform: translateY(-2px);
+            }
+            
+            .menu-image:hover {
+                transform: none;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- POPUP para Cardápios Ampliados -->
+    <div class="image-popup-overlay" id="imagePopup">
+        <button class="image-popup-close" id="closeImagePopup">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="image-popup-content">
+            <img src="" alt="" class="image-popup-img" id="popupImage">
+            <div class="image-popup-caption" id="popupCaption"></div>
+        </div>
+    </div>
+
+    <!-- POPUP para Cardápios -->
+    <div class="popup-overlay" id="menuPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <button class="popup-close" id="closeMenuPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 class="popup-title">Cardápios Disponíveis</h2>
+            </div>
+            <div class="popup-body">
+                <div class="menu-gallery">
+                    <div class="menu-item">
+                        <img src="menu_celebrar.png" alt="Menu Celebrar" class="menu-image" data-menu="celebrar">
+                        <p class="menu-caption">Menu Celebrar</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="menu_surpreender.png" alt="Menu Surpreender" class="menu-image" data-menu="surpreender">
+                        <p class="menu-caption">Menu Surpreender</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="menu_coquetel.png" alt="Menu Coquetel" class="menu-image" data-menu="coquetel">
+                        <p class="menu-caption">Menu Coquetel</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: left; background: rgba(248, 200, 220, 0.1); padding: 20px; border-radius: 10px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 15px;">Preços por Pessoa:</h3>
+                    <p><strong>Menu Celebrar:</strong> <span class="price-tag">R$109,90 (Não Alcoólico)</span> / <span class="price-tag">R$119,90 (Alcoólico)</span></p>
+                    <p><strong>Menu Surpreender:</strong> <span class="price-tag">R$129,90 (Não Alcoólico)</span> / <span class="price-tag">R$139,90 (Alcoólico)</span></p>
+                    <p><strong>Menu Coquetel:</strong> <span class="price-tag">R$169,90 (Não Alcoólico)</span> / <span class="price-tag">R$199,90 (Alcoólico)</span></p>
+                </div>
+                <button class="popup-button" style="margin-top: 30px;" id="closeMenuBtn">
+                    <i class="fas fa-check"></i> Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP para Localização com Mapa -->
+    <div class="popup-overlay" id="locationPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <button class="popup-close" id="closeLocationPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 class="popup-title">Local do Evento</h2>
+            </div>
+            <div class="popup-body">
+                <div class="popup-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="popup-message">
+                    <h3>Restaurante Abbraccio</h3>
+                    <p>Nos encontraremos em um local especial para celebrar este momento inesquecível.</p>
+                    
+                    <div class="address-info">
+                        <p><strong>Endereço:</strong></p>
+                        <p>Av. Gisele Constantino, 1850</p>
+                        <p>Parque Bela Vista, Votorantim - SP</p>
+                        <p>CEP: 18110-650</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.758317237589!2d-47.46229092487426!3d-23.611636278756647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf60d58f7cffcb%3A0x53b86ba92ccd6f8e!2sAv.%20Gisele%20Constantino%2C%201850%20-%20Parque%20Bela%20Vista%2C%20Votorantim%20-%20SP%2C%2018110-650!5e0!3m2!1spt-BR!2sbr!4v1701798400000!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <a href="https://maps.google.com/maps?q=Av.+Gisele+Constantino,+1850+-+Parque+Bela+Vista,+Votorantim+-+SP,+18110-650&ll=-23.611636,-47.462291&z=15" 
+                   target="_blank" 
+                   class="directions-link">
+                    <i class="fas fa-directions"></i> Abrir no Google Maps
+                </a>
+                
+                <button class="popup-button" style="margin-top: 30px;" id="closeLocationBtn">
+                    <i class="fas fa-check"></i> Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP para Confirmação -->
+    <div class="popup-overlay" id="customPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <button class="popup-close" id="closePopup">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 class="popup-title" id="popupTitle">Evento Adicionado!</h2>
+            </div>
+            <div class="popup-body">
+                <div class="popup-icon" id="popupIcon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="popup-message" id="popupMessage">
+                    <h3>Sucesso!</h3>
+                    <p>O evento "Jantar de Noivado - Bárbara e José" foi adicionado à sua agenda para o dia 17/01 às 18h.</p>
+                </div>
+                <button class="popup-button" id="popupActionButton">
+                    <i class="fas fa-calendar-check"></i> Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção principal -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="invite-title">VENHA CELEBRAR CONOSCO!</h1>
+            <h2 class="event-title">Jantar de Noivado - Bárbara e José</h2>
+            
+            <div class="date-container">
+                <div class="date-time">
+                    17 | 01 <small>ÀS 18H</small>
+                </div>
+                <div class="date-subtitle">Uma noite especial para celebrar</div>
+            </div>
+            
+            <p class="hero-text">Com muita alegria e amor, convidamos você para celebrar conosco este momento especial. Será uma noite inesquecível de celebração, boa comida e alegria compartilhada.</p>
+            
+            <div class="floating">
+                <i class="fas fa-heart" style="font-size: 2.5rem; color: #c97b95;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de detalhes do evento -->
+    <section class="event-details">
+        <div class="container">
+            <h2 class="section-title">Informações Importantes</h2>
+            
+            <div class="details-container">
+                <div class="detail-card" id="card-1">
+                    <div class="detail-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="detail-title">Cardápio</h3>
+                    <div class="detail-content">
+                        <p>Escolha entre 3 menus especiais com opções alcoólicas ou não alcoólicas.</p>
+                        <p>Preços por pessoa variam conforme o menu selecionado.</p>
+                    </div>
+                    <button class="floral-button secondary" id="menuBtn">
+                        <i class="fas fa-utensils"></i> Ver Cardápio
+                    </button>
+                </div>
+                
+                <div class="detail-card" id="card-2">
+                    <div class="detail-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="detail-title">Acompanhantes</h3>
+                    <div class="detail-content">
+                        <p>Por favor, informe se trará acompanhantes e a quantidade ao confirmar sua presença.</p>
+                    </div>
+                </div>
+                
+                <div class="detail-card" id="card-3">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="detail-title">Localização</h3>
+                    <div class="detail-content">
+                        <p>O jantar será realizado no Restaurante Abbraccio.</p>
+                        <p>Av. Gisele Constantino, 1850 - Parque Bela Vista, Votorantim - SP</p>
+                        <p>Estacionamento disponível no local.</p>
+                    </div>
+                    <button class="floral-button secondary" id="locationBtn">
+                        <i class="fas fa-map-marked-alt"></i> Ver Localização
+                    </button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="floral-button" id="calendarBtn">
+                    <i class="far fa-calendar-plus"></i> Adicionar à Agenda
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção RSVP - FORMULÁRIO DE CONFIRMAÇÃO -->
+    <section class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title">Confirme sua Presença</h2>
+            <p style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; color: #7a5a68;">
+                Para nos ajudar na organização, por favor confirme sua presença o mais breve possível.
+            </p>
+            
+            <!-- Loading -->
+            <div class="loading" id="formLoading">
+                <div class="loading-spinner"></div>
+                <p>Enviando confirmação...</p>
+            </div>
+            
+            <!-- FORMULÁRIO DE CONFIRMAÇÃO -->
+            <form id="rsvpForm" class="rsvp-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nome Completo *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail *</label>
+                    <input type="email" id="email" class="form-input" placeholder="seu.email@exemplo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">Telefone *</label>
+                    <input type="tel" id="phone" class="form-input" placeholder="(11) 99999-9999" required>
+                    <small style="display: block; margin-top: 5px; color: #666; font-size: 0.85rem;">
+                        Usaremos este número apenas para contato sobre o evento
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests" class="form-label">Número de Pessoas *</label>
+                    <select id="guests" class="form-select" required onchange="updateIndividualMenus()">
+                        <option value="" selected disabled>Selecione o número de pessoas</option>
+                        <option value="1">1 pessoa (apenas eu)</option>
+                        <option value="2">2 pessoas</option>
+                        <option value="3">3 pessoas</option>
+                        <option value="4">4 pessoas</option>
+                        <option value="5">5 pessoas</option>
+                        <option value="6">6 pessoas</option>
+                        <option value="7">7 pessoas</option>
+                        <option value="8">8 pessoas</option>
+                        <option value="9">9 pessoas</option>
+                        <option value="10">10 pessoas</option>
+                    </select>
+                </div>
+                
+                <!-- NOVOS CAMPOS PARA MENU E BEBIDA -->
+                <div class="menu-options-group">
+                    <div class="form-group">
+                        <label for="menuType" class="form-label">Menu Padrão (opcional)</label>
+                        <select id="menuType" class="form-select" onchange="updateIndividualMenus()">
+                            <option value="" selected>Selecione um menu padrão</option>
+                            <option value="celebrar" data-nao-alcoolico="109.90" data-alcoolico="119.90">
+                                Menu Celebrar - R$109,90 / R$119,90
+                            </option>
+                            <option value="surpreender" data-nao-alcoolico="129.90" data-alcoolico="139.90">
+                                Menu Surpreender - R$129,90 / R$139,90
+                            </option>
+                            <option value="coquetel" data-nao-alcoolico="169.90" data-alcoolico="199.90">
+                                Menu Coquetel - R$169,90 / R$199,90
+                            </option>
+                        </select>
+                        <small style="display: block; margin-top: 5px; color: #666; font-size: 0.85rem;">
+                            Selecione um menu padrão para aplicar a todos
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Bebida Padrão (opcional)</label>
+                        <div class="drink-toggle">
+                            <div class="drink-option" onclick="selectDrinkOption('nao-alcoolico')">
+                                <input type="radio" id="nao-alcoolico" name="drinkType" value="nao-alcoolico">
+                                <label for="nao-alcoolico" style="cursor: pointer;">
+                                    <i class="fas fa-glass-water"></i><br>
+                                    Não Alcoólico
+                                </label>
+                            </div>
+                            <div class="drink-option" onclick="selectDrinkOption('alcoolico')">
+                                <input type="radio" id="alcoolico" name="drinkType" value="alcoolico">
+                                <label for="alcoolico" style="cursor: pointer;">
+                                    <i class="fas fa-wine-glass-alt"></i><br>
+                                    Alcoólico
+                                </label>
+                            </div>
+                        </div>
+                        <small style="display: block; margin-top: 5px; color: #666; font-size: 0.85rem;">
+                            Selecione uma bebida padrão para aplicar a todos
+                        </small>
+                    </div>
+                </div>
+                
+                <!-- LINK PARA MENU INDIVIDUAL -->
+                <div style="text-align: center; margin: 15px 0;">
+                    <button type="button" class="menu-toggle-link" id="toggleIndividualMenus">
+                        <i class="fas fa-utensils"></i> Escolher menu diferente para cada pessoa
+                    </button>
+                </div>
+                
+                <!-- ÁREA DE MENUS INDIVIDUAIS -->
+                <div class="individual-menus-container" id="individualMenusContainer">
+                    <!-- Os menus individuais serão gerados aqui dinamicamente -->
+                </div>
+                
+                <!-- DISPLAY DO TOTAL -->
+                <div class="total-display">
+                    <p><strong>Valor Total Estimado:</strong></p>
+                    <div class="total-amount" id="totalAmount">R$ 0,00</div>
+                    <small id="totalDetails">Selecione o número de pessoas e menus</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="accompanied" class="form-label">Nomes dos Acompanhantes (se houver)</label>
+                    <textarea id="accompanied" class="form-textarea" rows="3" placeholder="Liste os nomes completos dos acompanhantes..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Mensagem (opcional)</label>
+                    <textarea id="message" class="form-textarea" rows="4" placeholder="Deixe uma mensagem especial para os noivos..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check-circle"></i> Confirmar Presença
+                </button>
+                
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">
+                    * Você receberá um e-mail de confirmação.
+                </p>
+            </form>
+            
+            <!-- MENSAGEM DE CONFIRMAÇÃO -->
+            <div id="confirmationMessage" class="confirmation-message">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="confirmation-text">
+                        <h3>Confirmação Recebida!</h3>
+                        <p>Obrigado por confirmar sua presença no nosso jantar de Noivado.</p>
+                        <p>Enviamos uma mensagem de confirmação para seu e-mail!</p>
+                    </div>
+                    <div class="confirmation-details">
+                        <p><strong>Evento:</strong> Jantar de Noivado - José e Bárbara</p>
+                        <p><strong>Data:</strong> 17 de Janeiro às 18:00</p>
+                        <p><strong>Local:</strong> Restaurante Abbraccio</p>
+                        <p><strong>Endereço:</strong> Av. Gisele Constantino, 1850 - Votorantim/SP</p>
+                        <p><strong>Valor Total:</strong> <span id="confirmationTotal"></span></p>
+                        <p><strong>Status:</strong> Confirmação enviada com sucesso</p>
+                    </div>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--color-text); font-size: 0.9rem;">
+                        Em breve enviaremos mais detalhes sobre o evento para o e-mail fornecido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-text">Com carinho, <span class="heart">♥</span> Bárbara e José</p>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #ffdde1;">
+                © 2024 Jantar de Noivado. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Código JavaScript otimizado
+        (function() {
+            'use strict';
+            
+            // Preços dos menus (por pessoa)
+            const menuPrices = {
+                'celebrar': {
+                    'nao-alcoolico': 109.90,
+                    'alcoolico': 119.90
+                },
+                'surpreender': {
+                    'nao-alcoolico': 129.90,
+                    'alcoolico': 139.90
+                },
+                'coquetel': {
+                    'nao-alcoolico': 169.90,
+                    'alcoolico': 199.90
+                }
+            };
+            
+            // Nomes dos menus
+            const menuNames = {
+                'celebrar': 'Menu Celebrar',
+                'surpreender': 'Menu Surpreender',
+                'coquetel': 'Menu Coquetel'
+            };
+            
+            // Bebida names
+            const drinkNames = {
+                'nao-alcoolico': 'Não Alcoólico',
+                'alcoolico': 'Alcoólico'
+            };
+            
+            // Cache de elementos DOM
+            const elements = {
+                popup: document.getElementById('customPopup'),
+                closePopup: document.getElementById('closePopup'),
+                popupActionButton: document.getElementById('popupActionButton'),
+                popupTitle: document.getElementById('popupTitle'),
+                popupIcon: document.getElementById('popupIcon'),
+                popupMessage: document.getElementById('popupMessage'),
+                rsvpForm: document.getElementById('rsvpForm'),
+                confirmationMessage: document.getElementById('confirmationMessage'),
+                calendarBtn: document.getElementById('calendarBtn'),
+                menuBtn: document.getElementById('menuBtn'),
+                locationBtn: document.getElementById('locationBtn'),
+                formLoading: document.getElementById('formLoading'),
+                detailCards: document.querySelectorAll('.detail-card'),
+                // Novos elementos
+                menuPopup: document.getElementById('menuPopup'),
+                closeMenuPopup: document.getElementById('closeMenuPopup'),
+                closeMenuBtn: document.getElementById('closeMenuBtn'),
+                locationPopup: document.getElementById('locationPopup'),
+                closeLocationPopup: document.getElementById('closeLocationPopup'),
+                closeLocationBtn: document.getElementById('closeLocationBtn'),
+                guestsSelect: document.getElementById('guests'),
+                menuTypeSelect: document.getElementById('menuType'),
+                totalAmount: document.getElementById('totalAmount'),
+                totalDetails: document.getElementById('totalDetails'),
+                confirmationTotal: document.getElementById('confirmationTotal'),
+                individualMenusContainer: document.getElementById('individualMenusContainer'),
+                toggleIndividualMenus: document.getElementById('toggleIndividualMenus'),
+                imagePopup: document.getElementById('imagePopup'),
+                closeImagePopup: document.getElementById('closeImagePopup'),
+                popupImage: document.getElementById('popupImage'),
+                popupCaption: document.getElementById('popupCaption')
+            };
+
+            // Configurações do evento ATUALIZADAS
+            const eventConfig = {
+                name: 'Jantar de Noivado - Bárbara e José',
+                date: '17 de Janeiro',
+                time: '18:00',
+                location: 'Restaurante Abbraccio',
+                address: 'Av. Gisele Constantino, 1850 - Parque Bela Vista, Votorantim - SP, 18110-650',
+                googleMapsUrl: 'https://maps.google.com/maps?q=Av.+Gisele+Constantino,+1850+-+Parque+Bela+Vista,+Votorantim+-+SP,+18110-650',
+                yourName: 'Bárbara e José'
+            };
+
+            // Webhook do Discord
+            const discordWebhookUrl = 'https://discord.com/api/webhooks/1447404317572071557/y2CmDmFD_sg0uNLA5nVBj-l6tEFE8BJwl9o5oI0iacewqQ5APmRuzzdrAqw4CNVoy_ni';
+
+            // Array para armazenar menus individuais
+            let individualMenus = [];
+
+            // Função para atualizar menus individuais
+            window.updateIndividualMenus = function() {
+                const guests = parseInt(elements.guestsSelect.value) || 0;
+                const defaultMenu = elements.menuTypeSelect.value;
+                const defaultDrink = document.querySelector('input[name="drinkType"]:checked')?.value;
+                
+                // Limpar array
+                individualMenus = [];
+                
+                // Limpar container
+                elements.individualMenusContainer.innerHTML = '';
+                
+                if (guests > 0) {
+                    // Mostrar container de menus individuais se houver mais de 1 pessoa
+                    if (guests > 1) {
+                        elements.toggleIndividualMenus.style.display = 'inline-block';
+                    } else {
+                        elements.toggleIndividualMenus.style.display = 'none';
+                    }
+                    
+                    // Criar menus individuais
+                    for (let i = 0; i < guests; i++) {
+                        const personNumber = i + 1;
+                        const menuId = `person-${personNumber}-menu`;
+                        const drinkId = `person-${personNumber}-drink`;
+                        
+                        // Definir valores padrão
+                        let menuValue = defaultMenu || '';
+                        let drinkValue = defaultDrink || 'nao-alcoolico';
+                        
+                        // Se já existir um valor salvo, usar ele
+                        if (individualMenus[i]) {
+                            menuValue = individualMenus[i].menu || menuValue;
+                            drinkValue = individualMenus[i].drink || drinkValue;
+                        }
+                        
+                        // Armazenar no array
+                        individualMenus[i] = {
+                            menu: menuValue,
+                            drink: drinkValue
+                        };
+                        
+                        // Criar HTML para este menu individual
+                        const menuSection = document.createElement('div');
+                        menuSection.className = 'individual-menu-section';
+                        menuSection.innerHTML = `
+                            <div class="individual-menu-header">
+                                <div class="individual-menu-title">Pessoa ${personNumber}</div>
+                            </div>
+                            <div class="individual-menu-controls">
+                                <select class="individual-menu-select" id="${menuId}" data-person="${personNumber}">
+                                    <option value="" ${!menuValue ? 'selected' : ''}>Selecione um menu</option>
+                                    <option value="celebrar" ${menuValue === 'celebrar' ? 'selected' : ''}>Menu Celebrar</option>
+                                    <option value="surpreender" ${menuValue === 'surpreender' ? 'selected' : ''}>Menu Surpreender</option>
+                                    <option value="coquetel" ${menuValue === 'coquetel' ? 'selected' : ''}>Menu Coquetel</option>
+                                </select>
+                                <select class="individual-menu-select" id="${drinkId}" data-person="${personNumber}">
+                                    <option value="nao-alcoolico" ${drinkValue === 'nao-alcoolico' ? 'selected' : ''}>Não Alcoólico</option>
+                                    <option value="alcoolico" ${drinkValue === 'alcoolico' ? 'selected' : ''}>Alcoólico</option>
+                                </select>
+                            </div>
+                        `;
+                        
+                        elements.individualMenusContainer.appendChild(menuSection);
+                    }
+                    
+                    // Adicionar event listeners aos novos selects
+                    document.querySelectorAll('.individual-menu-select').forEach(select => {
+                        select.addEventListener('change', function() {
+                            const personIndex = parseInt(this.dataset.person) - 1;
+                            const isMenu = this.id.includes('menu');
+                            
+                            if (isMenu) {
+                                individualMenus[personIndex].menu = this.value;
+                            } else {
+                                individualMenus[personIndex].drink = this.value;
+                            }
+                            
+                            calculateTotal();
+                        });
+                    });
+                    
+                    // Mostrar/ocultar container baseado no estado do toggle
+                    if (elements.individualMenusContainer.style.display === 'block') {
+                        elements.individualMenusContainer.style.display = 'block';
+                    } else {
+                        elements.individualMenusContainer.style.display = 'none';
+                    }
+                } else {
+                    elements.individualMenusContainer.style.display = 'none';
+                    elements.toggleIndividualMenus.style.display = 'none';
+                }
+                
+                // Calcular total
+                calculateTotal();
+            };
+
+            // Função para calcular o total
+            function calculateTotal() {
+                const guests = parseInt(elements.guestsSelect.value) || 0;
+                let total = 0;
+                let details = [];
+                
+                if (guests > 0) {
+                    // Verificar se estamos usando menus individuais
+                    const usingIndividualMenus = elements.individualMenusContainer.style.display === 'block';
+                    
+                    if (usingIndividualMenus && individualMenus.length === guests) {
+                        // Calcular com menus individuais
+                        for (let i = 0; i < guests; i++) {
+                            const menu = individualMenus[i].menu;
+                            const drink = individualMenus[i].drink;
+                            
+                            if (menu && menuPrices[menu] && menuPrices[menu][drink]) {
+                                const price = menuPrices[menu][drink];
+                                total += price;
+                                details.push(`Pessoa ${i+1}: ${menuNames[menu]} - ${drinkNames[drink]}`);
+                            } else {
+                                // Se não tiver menu selecionado, não adiciona ao total
+                                details.push(`Pessoa ${i+1}: Menu não selecionado`);
+                            }
+                        }
+                    } else {
+                        // Calcular com menu padrão
+                        const menuType = elements.menuTypeSelect.value;
+                        const drinkType = document.querySelector('input[name="drinkType"]:checked')?.value;
+                        
+                        if (menuType && drinkType && menuPrices[menuType] && menuPrices[menuType][drinkType]) {
+                            const pricePerPerson = menuPrices[menuType][drinkType];
+                            total = guests * pricePerPerson;
+                            details.push(`${guests} pessoa(s) × ${menuNames[menuType]} - ${drinkNames[drinkType]}`);
+                        }
+                    }
+                    
+                    // Formatar moeda brasileira
+                    const formattedTotal = total.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    });
+                    
+                    elements.totalAmount.textContent = formattedTotal;
+                    elements.totalDetails.textContent = details.join(' | ');
+                } else {
+                    elements.totalAmount.textContent = 'R$ 0,00';
+                    elements.totalDetails.textContent = 'Selecione o número de pessoas e menus';
+                }
+            }
+
+            // Função para selecionar opção de bebida
+            window.selectDrinkOption = function(value) {
+                // Remover a classe 'selected' de todas as opções
+                document.querySelectorAll('.drink-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Adicionar classe 'selected' à opção clicada
+                const selectedOption = document.querySelector(`.drink-option[onclick*="${value}"]`);
+                if (selectedOption) {
+                    selectedOption.classList.add('selected');
+                }
+                
+                // Marcar o radio button correspondente
+                const radioButton = document.getElementById(value);
+                if (radioButton) {
+                    radioButton.checked = true;
+                }
+                
+                // Atualizar menus individuais
+                updateIndividualMenus();
+            };
+
+            // Função para mostrar popup de cardápios ampliados
+            function showImagePopup(imageSrc, caption) {
+                elements.popupImage.src = imageSrc;
+                elements.popupCaption.textContent = caption;
+                elements.imagePopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Função para fechar popup de cardápios ampliados
+            function closeImagePopup() {
+                elements.imagePopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Função para mostrar popup de cardápios
+            function showMenuPopup() {
+                elements.menuPopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Função para fechar popup de cardápios
+            function closeMenuPopup() {
+                elements.menuPopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Função para mostrar popup de localização
+            function showLocationPopup() {
+                elements.locationPopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Função para fechar popup de localização
+            function closeLocationPopup() {
+                elements.locationPopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Função para mostrar popup
+            function showPopup(title, message, icon = 'check-circle', buttonText = 'Entendido') {
+                elements.popupTitle.textContent = title;
+                elements.popupMessage.innerHTML = message;
+                elements.popupIcon.innerHTML = `<i class="fas fa-${icon}"></i>`;
+                elements.popupActionButton.innerHTML = `<i class="fas fa-${icon === 'check-circle' ? 'calendar-check' : icon}"></i> ${buttonText}`;
+                elements.popup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Função para fechar popup
+            function closePopupFunc() {
+                elements.popup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Função para adicionar evento ao calendário ATUALIZADA
+            function addToCalendar() {
+                const eventDetails = {
+                    title: eventConfig.name,
+                    description: 'Jantar de Noivado - Bárbara e José',
+                    location: eventConfig.address,
+                    startDate: '2024-01-17',
+                    startTime: eventConfig.time,
+                    endDate: '2024-01-17',
+                    endTime: '22:00'
+                };
+
+                // Formatar data para Google Calendar
+                const startDateTime = `${eventDetails.startDate}T${eventDetails.startTime}:00`;
+                const endDateTime = `${eventDetails.endDate}T${eventDetails.endTime}:00`;
+                
+                // Google Calendar URL com endereço correto
+                const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${startDateTime.replace(/[-:]/g, '')}/${endDateTime.replace(/[-:]/g, '')}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}&sf=true&output=xml`;
+                
+                // Download .ics para outros calendários
+                const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jantar de Noivado//PT-BR
+BEGIN:VEVENT
+SUMMARY:${eventDetails.title}
+DTSTART:${startDateTime.replace(/[-:]/g, '')}Z
+DTEND:${endDateTime.replace(/[-:]/g, '')}Z
+DESCRIPTION:${eventDetails.description}
+LOCATION:${eventDetails.location}
+END:VEVENT
+END:VCALENDAR`;
+                
+                // Detectar dispositivo
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    // Dispositivo móvel - oferecer opções
+                    if (confirm('Deseja adicionar este evento ao seu calendário?')) {
+                        const blob = new Blob([icsContent], { type: 'text/calendar' });
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'jantar-noivado.ics';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                        
+                        showPopup(
+                            'Evento Adicionado!',
+                            `<h3>Sucesso!</h3><p>O evento foi baixado como arquivo .ics. Abra-o para adicionar ao seu calendário.</p><p><strong>Data:</strong> ${eventConfig.date}</p><p><strong>Horário:</strong> ${eventConfig.time}</p><p><strong>Local:</strong> ${eventConfig.address}</p>`,
+                            'calendar-plus',
+                            'Entendido'
+                        );
+                    }
+                } else {
+                    // Desktop - abrir Google Calendar
+                    window.open(googleCalendarUrl, '_blank');
+                    showPopup(
+                        'Google Calendar',
+                        `<h3>Google Calendar aberto!</h3><p>Adicione o evento ao seu Google Calendar na nova aba que foi aberta.</p><p><strong>Data:</strong> ${eventConfig.date}</p><p><strong>Horário:</strong> ${eventConfig.time}</p><p><strong>Local:</strong> ${eventConfig.address}</p>`,
+                        'calendar-alt',
+                        'Entendido'
+                    );
+                }
+            }
+
+            // Função para enviar para Discord Webhook com informações do menu
+            async function sendToDiscord(formData) {
+                if (!discordWebhookUrl || discordWebhookUrl.includes('SEU_WEBHOOK_AQUI')) {
+                    console.log('Webhook do Discord não configurado');
+                    return;
+                }
+
+                // Calcular total
+                const guests = parseInt(formData.guests) || 0;
+                let total = 0;
+                let menuDetails = [];
+                
+                // Verificar se usou menus individuais
+                const usingIndividualMenus = elements.individualMenusContainer.style.display === 'block';
+                
+                if (usingIndividualMenus && individualMenus.length === guests) {
+                    // Usou menus individuais
+                    for (let i = 0; i < guests; i++) {
+                        const menu = individualMenus[i].menu;
+                        const drink = individualMenus[i].drink;
+                        
+                        if (menu && menuPrices[menu] && menuPrices[menu][drink]) {
+                            const price = menuPrices[menu][drink];
+                            total += price;
+                            menuDetails.push(`Pessoa ${i+1}: ${menuNames[menu]} - ${drinkNames[drink]} (R$ ${price.toFixed(2)})`);
+                        }
+                    }
+                } else {
+                    // Usou menu padrão
+                    const menuType = formData.menuType;
+                    const drinkType = formData.drinkType;
+                    
+                    if (menuType && drinkType && menuPrices[menuType] && menuPrices[menuType][drinkType]) {
+                        const pricePerPerson = menuPrices[menuType][drinkType];
+                        total = guests * pricePerPerson;
+                        menuDetails.push(`${menuNames[menuType]} - ${drinkNames[drinkType]} (R$ ${pricePerPerson.toFixed(2)} por pessoa)`);
+                    }
+                }
+
+                const discordMessage = {
+                    content: '🎉 **Nova Confirmação de Presença no Jantar de Noivado!**',
+                    embeds: [{
+                        title: 'Detalhes da Confirmação',
+                        color: 0xe8b4c8,
+                        fields: [
+                            {
+                                name: '👤 Nome',
+                                value: formData.name || 'Não informado',
+                                inline: true
+                            },
+                            {
+                                name: '📧 E-mail',
+                                value: formData.email || 'Não informado',
+                                inline: true
+                            },
+                            {
+                                name: '📱 Telefone',
+                                value: formData.phone || 'Não informado',
+                                inline: true
+                            },
+                            {
+                                name: '👥 Número de Pessoas',
+                                value: formData.guests || '0',
+                                inline: true
+                            },
+                            {
+                                name: '🍽️ Tipo de Seleção',
+                                value: usingIndividualMenus ? 'Menus Individuais' : 'Menu Padrão',
+                                inline: true
+                            },
+                            {
+                                name: '💰 Valor Total',
+                                value: total ? `R$ ${total.toFixed(2)}` : 'Não calculado',
+                                inline: true
+                            },
+                            {
+                                name: '🎯 Detalhes dos Menus',
+                                value: menuDetails.length > 0 ? menuDetails.join('\n') : 'Não informado',
+                                inline: false
+                            },
+                            {
+                                name: '👥 Acompanhantes',
+                                value: formData.accompanied || 'Nenhum',
+                                inline: false
+                            },
+                            {
+                                name: '💌 Mensagem',
+                                value: formData.message || 'Nenhuma mensagem',
+                                inline: false
+                            },
+                            {
+                                name: '📅 Data/Hora da Confirmação',
+                                value: new Date().toLocaleString('pt-BR'),
+                                inline: true
+                            }
+                        ]
+                    }]
+                };
+
+                try {
+                    const response = await fetch(discordWebhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(discordMessage)
+                    });
+                    
+                    if (response.ok) {
+                        console.log('Dados enviados para Discord com sucesso!');
+                    } else {
+                        console.error('Erro ao enviar para Discord:', response.status);
+                    }
+                } catch (error) {
+                    console.error('Erro ao conectar com Discord:', error);
+                }
+            }
+
+            // Função para mostrar confirmação do formulário
+            function showFormConfirmation(formData) {
+                // Mostrar loading
+                elements.formLoading.style.display = 'block';
+                elements.rsvpForm.style.display = 'none';
+                
+                // Calcular total para exibição
+                const numGuests = parseInt(formData.guests);
+                let total = 0;
+                
+                // Verificar se usou menus individuais
+                const usingIndividualMenus = elements.individualMenusContainer.style.display === 'block';
+                
+                if (usingIndividualMenus && individualMenus.length === numGuests) {
+                    // Usou menus individuais
+                    for (let i = 0; i < numGuests; i++) {
+                        const menu = individualMenus[i].menu;
+                        const drink = individualMenus[i].drink;
+                        
+                        if (menu && menuPrices[menu] && menuPrices[menu][drink]) {
+                            total += menuPrices[menu][drink];
+                        }
+                    }
+                } else {
+                    // Usou menu padrão
+                    const menuType = formData.menuType;
+                    const drinkType = formData.drinkType;
+                    
+                    if (menuType && drinkType && menuPrices[menuType] && menuPrices[menuType][drinkType]) {
+                        const pricePerPerson = menuPrices[menuType][drinkType];
+                        total = numGuests * pricePerPerson;
+                    }
+                }
+                
+                const formattedTotal = total.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                });
+                
+                // Simular processamento
+                setTimeout(() => {
+                    // Esconder loading
+                    elements.formLoading.style.display = 'none';
+                    
+                    // Atualizar detalhes da confirmação
+                    let guestsText = '';
+                    if (numGuests === 1) {
+                        guestsText = 'apenas você';
+                    } else if (numGuests === 2) {
+                        guestsText = 'você e mais 1 pessoa';
+                    } else {
+                        guestsText = `você e mais ${numGuests - 1} pessoas`;
+                    }
+                    
+                    elements.confirmationTotal.textContent = `${formattedTotal} (${numGuests} pessoa(s))`;
+                    
+                    const detailsContainer = elements.confirmationMessage.querySelector('.confirmation-details');
+                    if (detailsContainer) {
+                        detailsContainer.innerHTML = `
+                            <p><strong>Nome:</strong> ${formData.name || 'Não informado'}</p>
+                            <p><strong>E-mail:</strong> ${formData.email || 'Não informado'}</p>
+                            <p><strong>Telefone:</strong> ${formData.phone || 'Não informado'}</p>
+                            <p><strong>Participantes:</strong> ${guestsText}</p>
+                            <p><strong>Tipo de Seleção:</strong> ${usingIndividualMenus ? 'Menus Individuais' : 'Menu Padrão'}</p>
+                            <p><strong>Valor Total:</strong> ${formattedTotal}</p>
+                            <p><strong>Status:</strong> Confirmação enviada com sucesso</p>
+                        `;
+                    }
+                    
+                    // Mostrar a mensagem de confirmação
+                    elements.confirmationMessage.classList.add('show');
+                    
+                    // Rola até a confirmação
+                    elements.confirmationMessage.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Enviar para Discord
+                    sendToDiscord(formData);
+                }, 1500);
+            }
+
+            // Event listeners otimizados
+            function setupEventListeners() {
+                // Popup principal
+                elements.closePopup.addEventListener('click', closePopupFunc);
+                elements.popupActionButton.addEventListener('click', closePopupFunc);
+                elements.popup.addEventListener('click', function(e) {
+                    if (e.target === elements.popup) closePopupFunc();
+                });
+
+                // Popup de cardápios
+                elements.closeMenuPopup.addEventListener('click', closeMenuPopup);
+                elements.closeMenuBtn.addEventListener('click', closeMenuPopup);
+                elements.menuPopup.addEventListener('click', function(e) {
+                    if (e.target === elements.menuPopup) closeMenuPopup();
+                });
+
+                // Popup de localização
+                elements.closeLocationPopup.addEventListener('click', closeLocationPopup);
+                elements.closeLocationBtn.addEventListener('click', closeLocationPopup);
+                elements.locationPopup.addEventListener('click', function(e) {
+                    if (e.target === elements.locationPopup) closeLocationPopup();
+                });
+
+                // Popup de imagem ampliada
+                elements.closeImagePopup.addEventListener('click', closeImagePopup);
+                elements.imagePopup.addEventListener('click', function(e) {
+                    if (e.target === elements.imagePopup) closeImagePopup();
+                });
+
+                // Event listeners para imagens do cardápio
+                document.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('menu-image')) {
+                        const imageSrc = e.target.src;
+                        const caption = e.target.alt;
+                        showImagePopup(imageSrc, caption);
+                    }
+                });
+
+                // Botão para abrir cardápios
+                elements.menuBtn.addEventListener('click', showMenuPopup);
+
+                // Botão de localização ATUALIZADO
+                elements.locationBtn.addEventListener('click', showLocationPopup);
+
+                // Toggle para menus individuais
+                elements.toggleIndividualMenus.addEventListener('click', function() {
+                    const guests = parseInt(elements.guestsSelect.value) || 0;
+                    
+                    if (guests < 2) {
+                        alert('É necessário selecionar pelo menos 2 pessoas para usar menus individuais.');
+                        return;
+                    }
+                    
+                    if (elements.individualMenusContainer.style.display === 'block') {
+                        elements.individualMenusContainer.style.display = 'none';
+                        this.innerHTML = '<i class="fas fa-utensils"></i> Escolher menu diferente para cada pessoa';
+                    } else {
+                        elements.individualMenusContainer.style.display = 'block';
+                        this.innerHTML = '<i class="fas fa-times"></i> Usar menu padrão para todos';
+                        
+                        // Atualizar menus individuais se necessário
+                        if (individualMenus.length !== guests) {
+                            updateIndividualMenus();
+                        }
+                    }
+                    
+                    // Recalcular total
+                    calculateTotal();
+                });
+
+                // Form submission
+                elements.rsvpForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Coletar dados do formulário
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        guests: document.getElementById('guests').value,
+                        menuType: document.getElementById('menuType').value,
+                        drinkType: document.querySelector('input[name="drinkType"]:checked')?.value || '',
+                        accompanied: document.getElementById('accompanied').value.trim(),
+                        message: document.getElementById('message').value.trim()
+                    };
+                    
+                    // Validar dados
+                    if (!formData.name || !formData.email || !formData.guests || !formData.phone) {
+                        alert('Por favor, preencha todos os campos obrigatórios (*)');
+                        return;
+                    }
+                    
+                    // Validar se pelo menos um menu foi selecionado
+                    const usingIndividualMenus = elements.individualMenusContainer.style.display === 'block';
+                    const numGuests = parseInt(formData.guests);
+                    
+                    if (usingIndividualMenus) {
+                        // Verificar se todos os menus individuais estão preenchidos
+                        let allMenusSelected = true;
+                        for (let i = 0; i < numGuests; i++) {
+                            if (!individualMenus[i] || !individualMenus[i].menu) {
+                                allMenusSelected = false;
+                                break;
+                            }
+                        }
+                        
+                        if (!allMenusSelected) {
+                            alert('Por favor, selecione um menu para cada pessoa.');
+                            return;
+                        }
+                    } else {
+                        // Verificar menu padrão
+                        if (!formData.menuType) {
+                            alert('Por favor, selecione um menu padrão ou use menus individuais.');
+                            return;
+                        }
+                        
+                        if (!formData.drinkType) {
+                            alert('Por favor, selecione o tipo de bebida padrão.');
+                            return;
+                        }
+                    }
+                    
+                    // Validar telefone (formato básico)
+                    const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+                    if (!phoneRegex.test(formData.phone)) {
+                        alert('Por favor, insira um número de telefone válido (ex: (11) 99999-9999)');
+                        return;
+                    }
+                    
+                    // Mostrar confirmação do formulário
+                    showFormConfirmation(formData);
+                });
+
+                // Botão do calendário
+                if (elements.calendarBtn) {
+                    elements.calendarBtn.addEventListener('click', addToCalendar);
+                }
+
+                // Atualizar menus quando número de pessoas ou menu padrão mudar
+                elements.guestsSelect.addEventListener('change', updateIndividualMenus);
+                elements.menuTypeSelect.addEventListener('change', updateIndividualMenus);
+
+                // Adicionar eventos para os radio buttons de bebida
+                document.querySelectorAll('input[name="drinkType"]').forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        // Atualizar visual dos botões
+                        document.querySelectorAll('.drink-option').forEach(option => {
+                            option.classList.remove('selected');
+                        });
+                        const label = this.closest('.drink-option');
+                        if (label) {
+                            label.classList.add('selected');
+                        }
+                        
+                        updateIndividualMenus();
+                    });
+                });
+
+                // Animações de scroll otimizadas
+                let ticking = false;
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function() {
+                            animateOnScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+
+                // Animação inicial
+                setTimeout(animateOnScroll, 100);
+            }
+
+            // Função de animação otimizada
+            function animateOnScroll() {
+                const windowHeight = window.innerHeight;
+                
+                // Animar cards
+                elements.detailCards.forEach((card, index) => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0 && !card.dataset.animated) {
+                        setTimeout(() => {
+                            card.style.animation = `fadeInUp 1s forwards ${index * 0.2}s`;
+                            card.dataset.animated = 'true';
+                        }, 50);
+                    }
+                });
+                
+                // Animar formulário
+                const rsvpForm = elements.rsvpForm;
+                if (rsvpForm) {
+                    const rect = rsvpForm.getBoundingClientRect();
+                    if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0 && !rsvpForm.dataset.animated) {
+                        rsvpForm.style.animation = 'fadeInUp 1s forwards 0.3s';
+                        rsvpForm.dataset.animated = 'true';
+                    }
+                }
+            }
+
+            // Inicialização
+            document.addEventListener('DOMContentLoaded', function() {
+                setupEventListeners();
+                
+                // Configurar tecla ESC para fechar popups
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        if (elements.imagePopup.classList.contains('active')) {
+                            closeImagePopup();
+                        } else if (elements.menuPopup.classList.contains('active')) {
+                            closeMenuPopup();
+                        } else if (elements.locationPopup.classList.contains('active')) {
+                            closeLocationPopup();
+                        } else if (elements.popup.classList.contains('active')) {
+                            closePopupFunc();
+                        }
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
